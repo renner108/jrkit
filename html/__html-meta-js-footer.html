@@ -1,0 +1,15 @@
+<script>
+  (function (d, w) {
+    var h = d.documentElement;
+
+    //removes 'document-preloading' class from <html> and replaces it with 'document-preloaded'
+    h.className = h.className.replace(/document-preloading/, 'document-preloaded');
+
+    //on 'load' event removes 'document-loading' class from <html> and replaces it with 'document-loaded'
+    typeof w.addEventListener === 'function' &&
+      w.addEventListener('load', function () {
+        h.className = h.className.replace(/document-loading/, 'document-loaded');
+      });
+
+  })(document, window)
+</script>

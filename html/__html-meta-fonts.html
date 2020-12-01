@@ -1,0 +1,9 @@
+<!-- LOAD GLOBAL DATA -->
+@@if ((() => context.DATA = DATA)()) {}
+
+<!-- INCLUDE PROJECT FONTS -->
+@@if (DATA.project.fonts.length) {
+  @@for (let i = 0; i < DATA.project.fonts.length; i++) {
+    <link rel="stylesheet" href="` + DATA.project.fonts[i] + `">
+  }
+}

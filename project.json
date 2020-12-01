@@ -1,0 +1,161 @@
+{
+  "id": "jrkit-janrenner-cz",
+  "name": "JRkit",
+  "author": "Jan Renner",
+  "headline": "Front-end development kit",
+  "description": "Node.js & Gulp based web front-end development kit",
+  "schemaOrgType": "Organization",
+  "geo": "50.080884;14.420252",
+  "image": {
+    "cover": "/cover.png",
+    "thumbnail": "/thumbnail.png",
+    "facebook": "/facebook.png"
+  },
+  "socials": {
+    "facebook": "https://www.facebook.com/honzarenner/",
+    "twitter": "https://twitter.com/janrenn",
+    "youtube": "https://youtube.com/c/JanRennerCZ",
+    "instagram": false
+  },
+  "twitterName": "@janrenn",
+  "fbAppId": "1876734479134742",
+  "support": {
+    "tel": "+420 604 674 863",
+    "email": "jan.renner@gmail.com"
+  },
+  "lang": ["cs"],
+  "locale": ["cs_CZ"],
+  "fonts": ["https://fonts.googleapis.com/css2?family=Bebas+Neue&display=fallback"],
+  "hugestFontName": "Bebas Neue",
+  "favicon": {
+    "appname": "JRkit",
+    "themeColor": "#fff200"
+  },
+  "gtm": {
+    "id": "GTM-5SSHSP8",
+    "account": "143930691",
+    "cid": "32808638",
+    "name": "jrkit.janrenner.cz",
+    "host": "janrenner.cz",
+    "ua": "UA-57796672-2"
+  },
+  "illustration": {
+    "url": "/dist/assets/illustrations/cube.png",
+    "size": "360px 360px",
+    "position": "right 3vw top 200px no-repeat"
+  },
+  "devel": {
+    "version": "4.5.2",
+    "description": "Front-end templates & mockup boilerplate",
+    "author": "janrenn (jan.renner@gmail.com)",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/janrenn/jrkit.git"
+    },
+    "root": "./../..",
+    "license": "UNLICENSED",
+    "private": true
+  },
+  "devUrl": "https://jrkitdev.janrenner.cz/",
+  "productionUrl": "https://jrkit.janrenner.cz/",
+  "debug": false,
+  "sitemap": {
+    "homepage": {
+      "title": "{{project.author}} | {{project.headline}}",
+      "description": "{{project.description}}",
+      "image": {
+        "thumbnail": "{{project.image.thumbnail}}",
+        "facebook": "{{project.image.facebook}}"
+      }
+    },
+    "example": {
+      "title": "Example page title | {{project.name}}",
+      "description": "Example page description.",
+      "image": {
+        "thumbnail": "{{project.image.thumbnail}}",
+        "facebook": "{{project.image.facebook}}"
+      },
+      "h1": "Example page",
+      "content": "<p>Example page content.</p>"
+    },
+    "error-404": {
+      "error": 404,
+      "title": "404 | Stránka nebyla nalezena | {{project.name}}",
+      "h1": "Stránka nebyla nalezena",
+      "content": "<p>Stránka, kterou hledáte, neexistuje. Zkuste se vrátit zpátky na <a href=\"/\">úvodní stránku</a> a znovu najít požadovaný obsah.</p>"
+    },
+    "error-500": {
+      "error": 500,
+      "title": "500 | Chyba serveru | {{project.name}}",
+      "h1": "Chyba serveru",
+      "content": "<p>Nastala chyba serveru. Zkuste to prosím později nebo nás kontaktujte na <a href=\"mailto:{{project.support.email}}\">{{project.support.email}}</a> nebo <strong><a href=\"tel:{{project.support.tel__nospaces}}\">{{project.support.tel}}</a></strong>.</p>"
+    },
+    "error-503": {
+      "error": 503,
+      "title": "503 | Stránky se upravují | {{project.name}}",
+      "h1": "Stránky se upravují",
+      "content": "<p>Stránky se právě upravují. Zkuste to prosím za několik minut.</p>"
+    }
+  },
+  "bootstrap": {
+    "colors": {
+      "customColors": {
+      },
+      "colors": {
+  "bg":               "#fff",
+  "bg-dim":           "#f8f9fa",
+  "bg-dimmer":        "#e9ecef",
+  "text-dark":        "#000",
+  "text":             "#212529",
+  "text-light":       "#343a40",
+  "headings":         "#000",
+  "links":            "#007bff",
+  "links-hover":      "#007bff",
+  "links-visited":    "#007bff",
+  "bg-inv":           "#212529",
+  "bg-inv-light":     "#343a40",
+  "text-inv-dark":    "#6c757d",
+  "text-inv":         "#ced4da",
+  "text-inv-light":   "#e9ecef",
+  "headings-inv":     "#6c757d",
+  "links-inv-hover":  "#e9ecef",
+  "selection":        "#ff3700",
+  "facebook":         "#3b5998",
+  "facebook-new":     "#1877f2",
+  "twitter":          "#1da1f2",
+  "linkedin":         "#0077b5",
+  "youtube":          "#f00"
+      },
+      "themeColors": {
+  "brand-primary":    "#fff200",
+  "brand-secondary":  "#000",
+  "primary":          "#007bff",
+  "secondary":        "#6c757d",
+  "success":          "#28a745",
+  "info":             "#17a2b8",
+  "warning":          "#ffc107",
+  "danger":           "#dc3545",
+  "dark":             "#343a40",
+  "light":            "#f8f9fa"
+      }
+    },
+    "links": {
+    },
+    "options": {
+    },
+    "typography": {
+      "html": {
+      },
+      "body": {
+      }
+    },
+    "grid": {
+    },
+    "components": {
+    },
+    "jsModules": {
+    },
+    "cssModules": {
+    }
+  }
+}

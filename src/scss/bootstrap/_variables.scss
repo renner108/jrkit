@@ -1,0 +1,394 @@
+//1 - defines custom variables
+//2 - loads original variables
+//3 - allows to remove from maps
+
+//1 - define custom variables
+//=============================
+
+// Color system
+//---------------
+//further customization in 'base/colors'
+$brand-primary:   #fff200;
+$brand-secondary: #000;
+
+//required colors
+$primary:   #007bff;
+$success:   #28a745;
+$info:      #17a2b8;
+$warning:   #ffc107;
+$danger:    #dc3545;
+
+//my colors
+$bg:              #fff;
+$bg-dim:          #f8f9fa;
+$bg-dimmer:       #e9ecef;
+$text-dark:       #000;
+$text:            #212529;
+$text-light:      #343a40;
+$text-lighter:    #6c757d;
+$headings:        $text-dark;
+$links:           $primary;
+$links-hover:     $links;
+$links-visited:   $links;
+$bg-inv:          #212529;
+$bg-inv-light:    #343a40;
+$text-inv-dark:   #6c757d;
+$text-inv:        #ced4da;
+$text-inv-light:  #e9ecef;
+$headings-inv:    $text-inv-dark;
+$links-inv-hover: $text-inv-light;
+$selection:       #ff3700;
+
+//vendor colors
+$facebook:      #3b5998;
+$facebook-new:  #1877f2;
+$twitter:       #1da1f2;
+$linkedin:      #0077b5;
+$youtube:       #f00;
+
+//populates color utilities and component variants
+$theme-colors: (
+  "brand-primary":    $brand-primary,
+  "brand-secondary":  $brand-secondary,
+  "primary":          $primary,
+  "success":          $success,
+  "info":             $info,
+  "warning":          $warning,
+  "danger":           $danger
+);
+
+//other colors
+//populates color utilities bg-*, text-* and border-*
+$colors: (
+  "bg":               $bg,
+  "bg-dim":           $bg-dim,
+  "bg-dimmer":        $bg-dimmer,
+  "text-dark":        $text-dark,
+  "text":             $text,
+  "text-light":       $text-light,
+  "text-lighter":     $text-lighter,
+  "headings":         $headings,
+  "links":            $links,
+  "links-hover":      $links-hover,
+  "links-visited":    $links-visited,
+  "bg-inv":           $bg-inv,
+  "bg-inv-light":     $bg-inv-light,
+  "text-inv-dark":    $text-inv-dark,
+  "text-inv":         $text-inv,
+  "text-inv-light":   $text-inv-light,
+  "headings-inv":     $headings-inv,
+  "links-inv-hover":  $links-inv-hover,
+  "selection":        $selection,
+  "facebook":         $facebook,
+  "facebook-new":     $facebook-new,
+  "twitter":          $twitter,
+  "linkedin":         $linkedin,
+  "youtube":          $youtube
+);
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark:   #000;
+$yiq-text-light:  #fff;
+
+
+// Options
+//----------
+$enable-caret:                                false;
+$enable-rounded:                              true;
+$enable-shadows:                              true;
+$enable-transitions:                          true;
+$enable-prefers-reduced-motion-media-query:   false;
+$enable-responsive-font-sizes:                false;
+$enable-validation-icons:                     false;
+
+
+// Spacing
+//----------
+$spacer: 1rem;
+$spacers: (
+   0: 0,
+   1: ($spacer *  0.25),  2: ($spacer *  0.50),  3: ($spacer *  0.75),  4: ($spacer *  1.00),  5: ($spacer *  1.25),  6: ($spacer *  1.50),
+   7: ($spacer *  2.00),  8: ($spacer *  2.50),  9: ($spacer *  3.00),
+  -1: ($spacer * -0.25), -2: ($spacer * -0.50), -3: ($spacer * -0.75), -4: ($spacer * -1.00), -5: ($spacer * -1.50), -6: ($spacer * -1.25),
+  -7: ($spacer * -2.00), -8: ($spacer * -2.50), -9: ($spacer * -3.00),
+);
+
+
+// Body
+//-------
+//further customization in 'base/colors'
+$body-bg:     $bg;
+$body-color:  $text;
+
+
+// Links
+//--------
+//further customization in 'base/colors'
+$link-color:              $links;
+$link-decoration:         underline;
+$link-hover-color:        $links-hover;
+$link-hover-decoration:   none;
+$link-visited-color:      $links-visited;
+
+
+// Paragraphs
+//-------------
+//further customization in 'base/typography'
+$paragraph-margin-bottom: 1rem; //1rem
+
+
+// Grid
+//-------
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,  //576px
+  md: 768px,  //768px
+  lg: 992px,  //992px
+  xl: 1200px  //1200px     //1248px - 1280px = ~32px
+);
+
+//containers
+//be aware of scrollbar width!
+$container-max-widths: (
+  sm: 540px,  //540px   ~36px
+  md: 720px,  //720px   ~48px
+  lg: 960px,  //960px   ~32px
+  xl: 1140px  //1140px  ~60px     //1248px - 1280px = ~32px
+);
+
+//columns
+$grid-columns:        12;   //12
+$grid-gutter-width:   30px; //30px  //32px
+
+
+// Components
+//-------------
+//base values for all components, can be rewritten by specific component
+//further customization in 'modules/...'
+$border-radius:     0.25rem;  //0.25rem
+$border-radius-lg:  0.30rem;  //0.30rem
+$border-radius-sm:  0.20rem;  //0.20rem
+
+//shadows
+//While shadows on components are disabled by default in Bootstrap and can be enabled via $enable-shadows, you can
+//also quickly add or remove a shadow with our box-shadow utility classes.
+$box-shadow-sm:     0 .125rem .25rem rgba(#000, .075);  //0 .125rem .25rem rgba($black, .075)
+$box-shadow:        0 .5rem 1rem rgba(#000, .15);       //0 .5rem 1rem rgba($black, .15)
+$box-shadow-lg:     0 1rem 3rem rgba(#000, .175);       //0 1rem 3rem rgba($black, .175)
+
+//active state of menus and custom inputs
+$component-active-color:  #fff;     //#fff
+$component-active-bg:     $primary; //$primary
+
+//transitions
+$transition-base:       all .15s linear;      //all .2s ease-in-out
+$transition-fade:       opacity .15s linear;  //opacity .15s linear
+$transition-collapse:   height .2s;           //height .35s ease
+
+
+// Typography
+//-------------
+//further customization in 'base/typography'
+$font-family-sans-serif:  Tahoma, Verdana, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-monospace:   SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-alt:         "Bebas Neue", "Arial Narrow", "Helvetica Neue Condensed", "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base:        $font-family-sans-serif;  //$font-family-sans-serif
+
+//my fallback
+$font-family-alt-fallback: "Arial Narrow", "Helvetica Neue Condensed", "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//my typo refinings
+$base-letter-spacing: 0.02em;
+$base-word-spacing:   0.01em;
+$alt-letter-spacing:  0.012em;
+$alt-word-spacing:    0.01em;
+
+//base
+$font-size-base:  1rem;                   //1rem
+$font-size-lg:    $font-size-base * 1.25; //$font-size-base * 1.25
+$font-size-sm:    $font-size-base * .875; //$font-size-base * .875
+$line-height-base:  1.5;  //1.5
+
+/*
+56px/60px = 3.5000rem/1.0714    h1
+//48px/52px = 3.0000rem/1.0833    h2
+44px/48px = 2.7500rem/1.0909    h2
+32px/38px = 2.0000rem/1.1875    h3
+25px/32px = 1.5525rem/1.2800    h4
+24px/30px = 1.5000rem/1.2500    .font-x-big
+19px/26px = 1.1875rem/1.3684    h5, .font-bigger
+18px/24px = 1.1250rem/1.3333    .card--title                .lead font-size (18px/1.5)
+17px/25px = 1.0625rem/1.4706    .font-big                   bigger components text
+16px/24px = 1.0000rem/1.5000    h6, .font-base
+15px/23px = 0.9375rem/1.5333    .font-small, .card--text    secondary texts, cards text
+14px/22px = 0.8750rem/1.5714    .font-smaller, .btn-sm      navigations, buttons
+13px/22px = 0.8125rem/1.6923    .font-x-small               colophone
+12px/22px = 0.7500rem/1.8333    .font-xx-small
+*/
+
+//my rem root
+$html-font-size:    16px;
+$html-line-height:  $line-height-base;
+
+//headings
+$h1-font-size:            1rem * 3.5000; //56px  //1rem * 2.5
+$h2-font-size:            1rem * 2.7500; //48px  //1rem * 2
+$h3-font-size:            1rem * 2.0000; //32px  //1rem * 1.75
+$h4-font-size:            1rem * 1.5625; //24px  //1rem * 1.5
+$h5-font-size:            1rem * 1.1875; //19px  //1rem * 1.25
+$h6-font-size:            1rem; //16px         //1rem
+
+$headings-margin-bottom:  $spacer / 2;  //$spacer / 2
+$headings-font-family:    null;         //null
+$headings-font-weight:    500;          //500
+$headings-line-height:    1.5;          //1.2
+$headings-color:          $headings;    //null
+
+//my inverted headings
+$headings-color-inv:      $headings-inv;  //$headings-inv
+
+//text
+$lead-font-size:          1rem * 1.25;    //1rem * 1.25
+$lead-font-weight:        400;            //300
+$small-font-size:         80%;            //80%
+$text-muted:              $text-lighter;  //#6c757d
+
+//hr
+$hr-border-color:             rgba(#000, .1);
+$hr-border-width:             1px;
+
+
+// Buttons + Forms
+//------------------
+//further customization in 'modules/buttons' and 'modules/forms'
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           $border-radius;     //$border-radius
+$btn-border-radius-lg:        $border-radius-lg;  //$border-radius-lg
+$btn-border-radius-sm:        $border-radius-sm;  //$border-radius-sm
+
+//custom file input translation
+$custom-file-text: (
+  cs: "Procházet",
+  en: "Browse",
+  de: "Durchsuchen",
+  ru: "Выберите файл"
+);
+
+
+// Navbar
+//---------
+//further customization in 'modules/navigation'
+$navbar-padding-y:              $spacer / 2;  //$spacer / 2
+$navbar-padding-x:              $spacer;      //$spacer
+
+$navbar-nav-link-padding-x:     .5rem;  //.5rem
+
+$navbar-toggler-padding-y:      .25rem;             //.25rem
+$navbar-toggler-padding-x:      .75rem;             //.75rem
+$navbar-toggler-font-size:      $font-size-lg;      //$font-size-lg
+$navbar-toggler-border-radius:  $btn-border-radius; //$btn-border-radius
+
+$navbar-dark-color:                 rgba(#fff, .5);   //rgba($white, .5)
+$navbar-dark-hover-color:           rgba(#fff, .75);  //rgba($white, .75)
+$navbar-dark-active-color:          #fff;             //$white
+$navbar-dark-disabled-color:        rgba(#fff, .25);  //rgba($white, .25)
+//$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color:  rgba(#fff, .1);   //rgba($white, .1)
+
+$navbar-light-color:                rgba(#000, .5); //rgba($black, .5)
+$navbar-light-hover-color:          rgba(#000, .7); //rgba($black, .7)
+$navbar-light-active-color:         rgba(#000, .9); //rgba($black, .9)
+$navbar-light-disabled-color:       rgba(#000, .3); //rgba($black, .3)
+//$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-light-toggler-border-color: rgba(#000, .1); //rgba($black, .1)
+
+$navbar-light-brand-color:          $navbar-light-active-color;
+$navbar-light-brand-hover-color:    $navbar-light-active-color;
+$navbar-dark-brand-color:           $navbar-dark-active-color;
+$navbar-dark-brand-hover-color:     $navbar-dark-active-color;
+
+
+// Cards
+//--------
+$card-spacer-y:             .75rem;
+$card-spacer-x:             1.25rem;
+$card-border-width:         0;                  //$border-width
+$card-border-radius:        0;                  //$border-radius
+$card-border-color:         rgba(#000, .125);   //rgba($black, .125)
+$card-inner-border-radius:  0;                  //subtract($card-border-radius, $card-border-width);
+$card-cap-bg:               rgba(#000, .03);    //rgba($black, .03)
+$card-cap-color:            null;
+$card-height:               null;
+$card-color:                null;
+$card-bg:                   transparent;        //$white;
+
+$card-img-overlay-padding:  1.25rem;
+
+$card-group-margin:         $grid-gutter-width / 2;
+$card-deck-margin:          $card-group-margin;
+
+$card-columns-count:        3;
+$card-columns-gap:          1.25rem;
+$card-columns-margin:       $card-spacer-y;
+
+
+// Dropdowns
+//------------
+//further customization in 'modules/navigation'
+$dropdown-min-width:              100%;                          //10rem
+$dropdown-padding-y:              .5rem;                          //.5rem
+$dropdown-spacer:                 .125rem;                        //.125rem
+$dropdown-font-size:              $font-size-base;                //$font-size-base
+$dropdown-color:                  $body-color;                    //$body-color
+$dropdown-bg:                     #fff;                           //$white
+$dropdown-border-color:           rgba(#000, .15);                //rgba($black, .15)
+$dropdown-border-radius:          $border-radius;                 //$border-radius
+$dropdown-border-width:           $border-width;                  //$border-width
+$dropdown-box-shadow:             0 .5rem 1rem rgba(#000, .175);  //0 .5rem 1rem rgba($black, .175)
+
+$dropdown-link-color:             #212529;                        //$gray-900
+$dropdown-link-hover-color:       darken(#212529, 5%);            //darken($gray-900, 5%)
+$dropdown-link-hover-bg:          #f8f9fa;                        //$gray-100
+
+$dropdown-link-active-color:      $component-active-color;        //$component-active-color
+$dropdown-link-active-bg:         $component-active-bg;           //$component-active-bg
+
+$dropdown-item-padding-y:         .25rem;                         //.25rem
+$dropdown-item-padding-x:         1.5rem;                         //1.5rem
+
+
+// Alerts
+//---------
+//further customization in 'modules/callouts'
+$alert-padding-y:         0.75rem;
+$alert-padding-x:         1.25rem;
+$alert-margin-bottom:     1rem;
+$alert-border-radius:     $border-radius;
+$alert-link-font-weight:  700;
+$alert-border-width:      1px;
+
+
+//2 - load original variables
+//=============================
+@import 'node_modules/bootstrap/scss/variables';
+
+
+//3 - allow to remove from maps
+//===============================
+//be aware of conflict with my colors map
+$colors: map-remove(
+  $colors,
+    "blue",
+    "indigo",
+    "purple",
+    "pink",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "teal",
+    "cyan"
+);

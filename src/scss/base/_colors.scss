@@ -1,0 +1,90 @@
+//background and text
+//---------------------
+//inverted
+.inverted {
+  background: $bg-inv;
+  color: $text-inv;
+}
+
+
+//links
+//--------
+.page--content a:visited {
+  color: $link-visited-color;
+  .inverted & {
+    color: inherit;
+  }
+}
+
+//inverted
+.inverted {
+  a {
+    color: inherit;
+  }
+  a:hover,
+  a:focus {
+    color: $links-inv-hover;
+  }
+  .text-text-inv-dark {
+    a:hover,
+    a:focus {
+      color: $text-inv-light;
+    }
+  }
+}
+
+//phone numbers
+a[href^="tel:"] {
+  color: inherit;
+}
+a[href^="tel:"]:hover,
+a[href^="tel:"]:focus {
+  color: $links-hover;
+  //inverted
+  .inverted & {
+    color: $links-inv-hover;
+  }
+}
+
+
+//headings
+//----------
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $headings-color;
+  a {
+    color: inherit;
+  }
+  a:hover,
+  a:focus {
+    color: inherit;
+  }
+}
+
+//inverted
+.inverted {
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $headings-color-inv;
+    a {
+      color: inherit;
+    }
+    a:hover,
+    a:focus {
+      color: inherit;
+    }
+  }
+}
+
+
+//selected text color
+//---------------------
+//@see http://stackoverflow.com/questions/7224445/css3-selection-behaves-differently-in-ff-chrome
+::selection {
+    background-color: rgba($selection, 0.99);
+    color: #fff;
+}
+::-moz-selection {
+    background-color: $selection;
+    color: #fff;
+}

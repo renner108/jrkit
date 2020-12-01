@@ -1,0 +1,65 @@
+<!-- LOAD GLOBAL DATA -->
+@@if ((() => context.DATA = DATA)()) {}
+
+<!--
+  This is an example system page. It is a complete page file. It does not have to include HTML header and footer
+  and can include any other files. The rendered result will be copied to /static.
+-->
+
+@@include('__html-header.html')
+
+<section class="system-page system-page__{{page_type}}" id="main">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="system-page--header system-page--header__{{page_type}} pb-2 mt-6 mb-2 border-bottom" id="navigation">
+          <h1 class="system-page--title system-page--title__{{page_type}}"><a href="{{project.devel.root}}/">{{project.name}}</a></h1>
+        </div>
+        <h2 class="system-page--subtitle system-page--subtitle__{{page_type}} pb-6 pt-2">{{system_page_title}}</h2>
+      </div><!-- /.col-sm -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+
+  <section class="system-section system-section__{{section_type}}">
+    <div class="container mb-7">
+      <div class="row">
+        <div class="col-sm">
+          <h3 class="system-section--title system-section--title__{{section_type}}">{{system_section_title}}</h3>
+          <div class="system-section--content system-section--content__{{section_type}}">
+            {{system_section_content}}
+          </div>
+        </div><!-- /.col-sm -->
+      </div><!-- /.row -->
+    </div><!-- /.container/.mb-7 -->
+  </section>
+
+  <section class="system-section system-section__{{section_type}} inverted pt-8 pb-1 mb-7">
+    <div class="container mb-7">
+      <div class="row">
+        <div class="col-sm">
+          <h3 class="system-section--title system-section--title__{{section_type}}">{{system_section_title}}</h3>
+          <div class="system-section--content system-section--content__{{section_type}}">
+            {{system_section_content}}
+          </div>
+        </div><!-- /.col-sm -->
+      </div><!-- /.row -->
+    </div><!-- /.container/.mb-7 -->
+  </section>
+
+
+  <div class="container mt-8 mb-7 border-top">
+    <div class="row">
+      <div class="col-sm pt-2">
+        <ul class="font-x-small list-unstyled list-sm-inline-bullets">
+          <li><a href="{{project.devel.root}}/">{{project.name}}</a></li>
+          <li>{{project.devel.description}}</li>
+        </ul>
+      </div><!-- /.col-sm -->
+    </div><!-- /.row -->
+  </div><!-- /.container.mt-8.mb-7.border-top -->
+
+</section>
+
+@@include('__html-footer.html')

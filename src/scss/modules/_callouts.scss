@@ -1,0 +1,60 @@
+/**
+ * @subsection Botstrap callouts
+ * -------------------------------
+ * Callouts from Bootstrap3 docs. Custom and helpful notes for folks reading the docs.
+ * Requires a base and modifier class.
+ */
+.bs-callout {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #777;
+    color: #777; /* @callout-base-color: #777 */
+    background: #f7f7f7; /* lighten(@callout-base-color, 50%): #777 */
+}
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+    background-color: #fff;
+}
+.bs-callout-primary {
+    border-color: #428bca; /* @brand-primary: #428bca */
+    background-color: #e9f2f9; /* lighten(@brand-primary, 42%): #e9f2f9 */
+}
+.bs-callout-success {
+    border-color: #5cb85c; /* @brand-success: #5cb85c */
+    background-color: #f1f9f1; /* lighten(@brand-success, 42%): #f1f9f1 */
+}
+.bs-callout-info {
+    border-color: #5bc0de; /* @brand-info: #5bc0de */
+    background-color: #f0f9fc; /* lighten(@brand-success, 35%): #f0f9fc */
+}
+.bs-callout-warning {
+    border-color: #f0ad4e; /* @brand-warning: #f0ad4e */
+    background-color: #fef9f3; /* lighten(@brand-warning, 35%): #fef9f3 */
+}
+.bs-callout-danger {
+    border-color: #ed1c24; /* @brand-danger: #d9534f */
+    background-color: #fcf3f3; /* lighten(@brand-success, 39%): #fcf3f3 */
+}
+.bs-callout-primary h4 {
+    color: #428bca; /* @brand-primary: #428bca */
+}
+.bs-callout-success h4 {
+    color: #5cb85c; /* @brand-success: #5cb85c */
+}
+.bs-callout-info h4 {
+    color: #5bc0de; /* @brand-info: #5bc0de */
+}
+.bs-callout-warning h4 {
+    color: #f0ad4e; /* @brand-warning: #f0ad4e */
+}
+.bs-callout-danger h4 {
+    color: #ed1c24; /* @brand-danger: #d9534f */
+}
+

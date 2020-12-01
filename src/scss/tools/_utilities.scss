@@ -1,0 +1,125 @@
+//layout
+//--------
+//display
+//same as Bootstrap .d-*, but JS conditional
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $value in $displays {
+      html.js .d#{$infix}-#{$value}-if-js { display: $value !important; }
+      html.no-js .d#{$infix}-#{$value}-if-no-js { display: $value !important; }
+    }
+  }
+}
+
+//cookies and DOM state conditional
+html.cookies .d-none-if-cookies,
+html.no-cookies .d-none-if-no-cookies,
+html.document-preloading .d-none-if-preloading,
+html.document-preloaded .d-none-if-preloaded,
+html.document-loading .d-none-if-loading,
+html.document-loaded .d-none-if-loaded {
+  display: none !important;
+}
+
+//visibility
+//same as Bootstrap .visible/.invisible, but JS conditional
+html.js .visible-if-js,
+html.no-js .visible-if-no-js {
+  visibility: visible !important;
+}
+html.js .invisible-if-js,
+html.no-js .invisible-if-no-js {
+  visibility: hidden !important;
+}
+
+//cookies and DOM state conditional
+html.document-preloading .invisible-if-preloading,
+html.document-preloaded .invisible-if-preloaded,
+html.document-loading .invisible-if-loading,
+html.document-loaded .invisible-if-loaded {
+  visibility: hidden !important;
+}
+
+
+//typography
+//--------
+//utility missing in Bootstrap
+.font-weight-semibold {
+  font-weight: 500 !important;
+}
+
+//dividers between text parts, links...
+.divider {
+  @include divider;
+}
+
+//for making thin...
+.thin-space {
+  font-size: 0.8em;
+}
+
+//... and hair spaces
+.hair-space {
+  font-size: 0.5em;
+}
+
+//all spaces thin
+.thin-spacing {
+  word-spacing: -0.048em;
+}
+
+//all spaces hair
+.hair-spacing {
+  word-spacing: -0.137em;
+}
+
+//.text-nowrap alias
+.nobr {
+  white-space: nowrap !important;
+}
+
+
+//colors
+//--------
+@each $color, $value in $colors {
+  @include bg-variant(".bg-#{$color}", $value, true);
+}
+
+@each $color, $value in $colors {
+  @include text-emphasis-variant(".text-#{$color}", $value, true);
+}
+
+@each $color, $value in $colors {
+  .border-#{$color} {
+    border-color: $value !important;
+  }
+}
+
+
+//links
+//--------
+
+
+//transitions
+//--------
+.trans {
+  @include trans;
+}
+.no-trans,
+.notrans {
+  @include no-trans;
+}
+
+
+//borders
+//------------
+.rounded-pill-left {
+  border-top-left-radius: 50rem !important;
+  border-bottom-left-radius: 50rem !important;
+}
+
+.rounded-pill-right {
+  border-top-right-radius: 50rem !important;
+  border-bottom-right-radius: 50rem !important;
+}

@@ -1,0 +1,27 @@
+# ignore node dependency directories
+node_modules/
+#package-lock.json
+.vscode
+_res/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+
+# JRkit development only
+#############################
+/*.png
+/*.ico
+/*.svg
+/*.xml
+/*.txt
+/*.webmanifest
+/error-*.html
+/faviconData.json
+/html/static/
+/html/___*
+/html/*.json
+/html/*.txt
+/dist/

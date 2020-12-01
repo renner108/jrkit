@@ -1,0 +1,9 @@
+# development
+
+User-agent: *
+Disallow: /
+
+# allow blocked resources
+User-Agent: Googlebot
+Allow: *.js
+Allow: *.css

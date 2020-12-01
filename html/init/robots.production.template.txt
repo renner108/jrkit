@@ -1,0 +1,18 @@
+# Ypsilonka.cz
+# robots.txt version {{date}}
+
+User-agent: *
+Disallow: /_
+Disallow: /*/__
+Disallow: *?utm_*
+
+# block access to all URLs that include a question mark
+# Disallow: /*?
+
+# allow blocked resources
+User-Agent: Googlebot
+Allow: *.js
+Allow: *.css
+
+# locate the XML sitemap
+Sitemap: {{home}}/sitemap.xml

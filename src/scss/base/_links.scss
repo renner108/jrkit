@@ -1,0 +1,69 @@
+//base
+//------
+//enhances Bootstrap with :focus
+a {
+  @include hover-focus() {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+//removes :focus outline
+*:focus { outline: none; }
+
+
+//links decoration
+//------------------
+//decoration swap
+.link-decoration-swap a {
+  text-decoration: $link-hover-decoration;
+  @include hover-focus() {
+    text-decoration: $link-decoration;
+  }
+}
+
+//decoration reset
+.link-decoration-base a {
+  text-decoration: $link-decoration;
+  @include hover-focus() {
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+//headings
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  a {
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+}
+
+//decoration none
+.link-decoration-none a {
+  text-decoration: none !important;
+}
+
+//phone numbers
+a[href^="tel:"] {
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+
+//components links reset
+//------------------------
+.btn,
+.badge, .badge a,
+.close,
+.dropdown-item,
+.list-group-item-action,
+.nav-link,
+.navbar-brand,
+.navbar-toggler,
+.page-link,
+a:not([href]):not([class]) {
+  text-decoration: none !important;
+}

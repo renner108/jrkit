@@ -1,0 +1,34 @@
+@media print {
+
+  //makes link URLs and titles printable
+  a[href^="http"]:after,
+  a[href^="ftp"]:after,
+  a[href^="mailto"]:after,
+  a[href^="git"]:after,
+  a[href^="irc"]:after,
+  a[href^="skype"]:after,
+  a[href^="svn"]:after,
+  a[href^="sms"]:after {
+    content: " [" attr(href) "]";
+    font-family: monospace;
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+  //except logos and navigation in headers
+  header a[href]:after {
+    content: '';
+    display: none;
+  }
+  abbr[title]:after {
+    content: " [" attr(title) "]";
+    font-size: 0.8em;
+    font-weight: normal;
+  }
+
+  //links
+  a:not(.btn) {
+    text-decoration: underline !important;
+    text-underline-position: under !important;
+  }
+
+}

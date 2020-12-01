@@ -1,0 +1,14 @@
+<!-- LOAD GLOBAL DATA -->
+@@if ((() => context.DATA = DATA)()) {}
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{project.name}}">
+@@if (DATA.project.fbAppId !== false) {
+  <meta property="fb:app_id" content="{{project.fbAppId}}">
+}
+<meta property="og:url" content="{{canonical}}">
+@@if (DATA.current) {
+  <meta property="og:title" content="{{current.title}}">
+  <meta property="og:description" content="{{current.description}}">
+  <meta property="og:image" content="{{project.devel.root}}{{current.image.facebook}}">
+}

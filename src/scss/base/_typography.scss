@@ -1,0 +1,199 @@
+//base text
+//-----------
+//rem root
+//adding specific 1rem and line-height
+html {
+  font-size: $html-font-size;
+  line-height: $html-line-height;
+}
+
+//base font
+//adding type refinings
+/*
+mixin font-base
+  letter-spacing: $base-letter-spacing;
+  word-spacing: $base-word-spacing;
+*/
+body {
+  //font-family: $font-family-base; is in Reboot
+  @include font-base;
+}
+
+//alt font
+/*
+mixin font-alt
+  font-family: $font-family-alt;
+  letter-spacing: $alt-letter-spacing;
+  word-spacing: $alt-word-spacing;
+*/
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+.font-alt {
+  @include font-alt;
+}
+
+//ability to adjust fallback fonts
+html:not(.fonts-loaded) h1,
+html:not(.fonts-loaded) .h1,
+html:not(.fonts-loaded) h2,
+html:not(.fonts-loaded) .h2,
+html:not(.fonts-loaded) h3,
+html:not(.fonts-loaded) .h3,
+html:not(.fonts-loaded) h4,
+html:not(.fonts-loaded) .h4,
+html:not(.fonts-loaded) .font-alt {
+  @include font-alt-fallback;
+}
+
+//later, for specificity over fallback
+html .font-base {
+  font-family: $font-family-base;
+  @include font-base;
+}
+
+
+/*
+56px/60px = 3.5000rem/1.0714    h1
+//48px/52px = 3.0000rem/1.0833    h2
+44px/48px = 2.7500rem/1.0909    h2
+32px/38px = 2.0000rem/1.1875    h3
+25px/32px = 1.5525rem/1.2800    h4
+24px/30px = 1.5000rem/1.2500    .font-x-big
+19px/26px = 1.1875rem/1.3684    h5, .font-bigger
+18px/24px = 1.1250rem/1.3333    .card--title                .lead font-size (18px/1.5)
+17px/25px = 1.0625rem/1.4706    .font-big                   bigger components text
+16px/24px = 1.0000rem/1.5000    h6, .font-base
+15px/23px = 0.9375rem/1.5333    .font-small, .card--text    secondary texts, cards text
+14px/22px = 0.8750rem/1.5714    .font-smaller, .btn-sm      navigations, buttons
+13px/22px = 0.8125rem/1.6923    .font-x-small               colophone
+12px/22px = 0.7500rem/1.8333    .font-xx-small
+*/
+
+//headings
+//----------
+h1, .h1 {
+  line-height: 1.0714;
+}
+h2, .h2 {
+  //line-height: 1.0833;
+  line-height: 1.0909;
+}
+h3, .h3 {
+  line-height: 1.1875;
+}
+h4, .h4 {
+  //line-height: 1.2500;
+  line-height: 1.2800;
+}
+h5, .h5 {
+  line-height: 1.3684;
+}
+h6, .h6 {
+  line-height: 1.5000;
+}
+
+
+//text sizes
+//------------
+//base text
+@mixin font-base {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+.font-base {
+  @include font-base;
+}
+
+//small text
+.font-small {
+  @include font-small;
+}
+
+.font-smaller {
+  @include font-smaller;
+}
+
+small,
+.font-x-small {
+  @include font-x-small;
+}
+
+.font-xx-small {
+  @include font-xx-small;
+}
+
+//big text
+.font-big {
+  @include font-big;
+}
+
+.font-bigger {
+  @include font-bigger;
+}
+
+.font-x-big {
+  @include font-x-big;
+}
+
+//small in headings
+h1 small, h2 small, h3 small, h4 small,
+.h1 small, .h2 small, .h3 small, .h4 small {
+  font-size: $small-font-size;
+  font-weight: 400;
+  color: $text-muted;
+}
+
+
+//lists
+//-------
+ul:not(.list-unstyled):not(.list-inline) > li {
+  margin-bottom: .125rem;
+}
+
+//mobiles
+@include media-breakpoint-down(xs) {
+  ul:not(.list-unstyled):not(.list-inline) > li {
+    margin-bottom: .25rem;
+  }
+}
+
+//immediate children have inline-block automatically
+.list-inline > li {
+  display: inline-block;
+}
+
+//my lists
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      .list#{$infix}-inline-bullets,
+      .list#{$infix}-inline-pipes {
+        @include list-unstyled();
+      }
+      .list#{$infix}-inline-bullets > li,
+      .list#{$infix}-inline-pipes > li {
+        display: inline-block;
+        &:not(:last-child):after {
+          content: ' \2022';
+          @include divider;
+        }
+      }
+      .list#{$infix}-inline-pipes > li {
+        &:not(:last-child):after {
+          content: ' |';
+          padding: 0 0.25em;
+        }
+      }
+  }
+}
+
+
+//misc & fixes
+//--------------
+//kill justify
+[align="justify"],
+p[align="justify"] {
+  text-align: left;
+}

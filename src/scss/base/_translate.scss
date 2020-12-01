@@ -1,0 +1,38 @@
+//translation for file input is in variables
+//@see https://getbootstrap.com/docs/4.5/components/forms/#translating-or-customizing-the-strings-with-scss
+
+//http://cs.wikipedia.org/wiki/Uvozovky
+//default is "en" style; "es" has "en" equivalent
+:lang(cs) q, :lang(sk) q, :lang(hu) q {
+  quotes: '\201e' '\201c' '\201a' '\2018';
+}
+:lang(de) q {
+  quotes: '\201e' '\201c' '\00bb' '\00ab';
+}
+:lang(ru) q {
+  quotes: '\00ab' '\00bb' '\201e' '\201c';
+}
+:lang(fr) q {
+  quotes: '\00ab' '\00bb' '\2018' '\201d';
+}
+:lang(pl) q {
+  quotes: '\201e' '\201d' '\00ab' '\00bb';
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+:lang(cs) q q q:before, :lang(sk) q q q:before, :lang(hu) q q q:before {
+  content: '\00bb';
+}
+:lang(cs) q q q:after, :lang(sk) q q q:after, :lang(hu) q q q:after {
+  content: '\00ab';
+}
+:lang(pl) q q q:before {
+  content: '\201e';
+}
+:lang(pl) q q q:after {
+  content: '\201c';
+}

@@ -1,0 +1,31 @@
+<script>
+
+  //project vars
+  var LANG = '{{project.lang[0]}}',
+      LOCALE = '{{project.locale[0]}}',
+      DEBUG = {{project.debug}},
+      dataLayer = dataLayer || [];
+
+  //fonts loading
+  (function (d) {
+
+    var h = d.documentElement,
+        setAll = function () {
+          d.cookie = 'fonts_loaded=true;path=/;expires=' + (new Date(Date.now() + 7776000e3).toUTCString());
+          h.className += ' fonts-loaded';
+        };
+    if (/fonts_loaded=true/.test(d.cookie)) {
+      setAll();
+    }
+    else if (typeof d.fonts == 'object') {
+      d.fonts.load("1em '{{project.hugestFontName}}'").then(setAll);
+    }
+    else {
+      //fallback
+      setAll();
+    }
+
+    //replacing class "no-js" with "js" on <html> tag
+    h.className = h.className.replace(/no-js/, 'js');
+  })(document)
+</script>

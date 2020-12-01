@@ -1,0 +1,65 @@
+<!-- LOAD GLOBAL DATA -->
+@@if ((() => context.DATA = DATA)()) {}
+
+<!doctype html>
+<html class="no-js document-loading document-preloading" lang="{{project.lang[0]}}" itemscope itemtype="http://schema.org/WebSite" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- TITLE -->
+    @@if (DATA.current) {
+      <title>{{current.title}}</title>
+    }
+    @@if (!DATA.current) {
+      <title>{{project.author}} | {{project.headline}}</title>
+    }
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="author" content="{{project.author}}">
+    <meta name="image_src" content="{{project.devel.root}}{{project.image.thumbnail}}">
+    @@if (DATA.current && DATA.current.description) {
+      <meta name="description" content="{{current.description}}">
+    }
+    @@if (DATA.project.geo) {
+      <meta name="geo.position" content="{{project.geo}}">
+    }
+    <meta name="format-detection" content="telephone=no">
+
+    <!--
+      HEADS UP! Remember to include '__html-meta-robots-production.html' for production dist!
+      "gulp html --rp" or "gulp dist --rp" does it
+    -->
+    @@if (DATA.includeRobotsProduction) {
+      @@include('__html-meta-robots-production.html')
+    }
+    @@if (!DATA.includeRobotsProduction) {
+      @@include('__html-meta-robots-development.html')
+    }
+
+    <!-- SOCIALS -->
+    @@if (DATA.current && DATA.current.description && DATA.current.image) {
+      @@include('__html-meta-socials-facebook.html')
+      @@include('__html-meta-socials-twitter.html')
+      @@include('__html-meta-microdata.html')
+    }
+
+    <!-- PROJECT STYLESHEETS -->
+    <link rel="stylesheet" href="{{project.devel.root}}/dist/css/index.css">
+
+    <!-- EMBEDDED FONTS (HTML is generated from project.fonts) -->
+    @@include('__html-meta-fonts.html')
+
+    <!-- BLOCKING SCRIPTS -->
+    @@include('__html-meta-js.html')
+
+    <!-- FAVICONS (__html-meta-icons.html is generated automatically) -->
+    <link rel="shortcut icon" href="{{project.devel.root}}/favicon.ico">
+    @@if (DATA.fileExists('html/__html-meta-icons.html')) {
+      @@include('__html-meta-icons.html')
+    }
+  </head>
+  <body id="{{project.id}}">
+    <div id="top" class="wrapper-top">
+
+    @@include('_skiplinks.tpl')

@@ -1,0 +1,24 @@
+//elements with transitions
+.trans, .nav a, input, textarea,
+h1 a, h2 a, h3 a, a img {
+  @include trans;
+}
+
+//links
+a {
+  @include trans;
+}
+
+//elements without transitions
+.btn:focus, .btn:active, .btn.active, [disabled], html.document-preloading * {
+    @include no-trans;
+}
+
+//disabling transitons
+@if $enable-prefers-reduced-motion-media-query {
+  @media (prefers-reduced-motion: reduce) {
+    .trans {
+      @include no-trans;
+    }
+  }
+}

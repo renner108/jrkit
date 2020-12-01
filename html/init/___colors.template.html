@@ -1,0 +1,217 @@
+<!-- LOAD GLOBAL DATA -->
+@@if ((() => context.DATA = DATA)()) {}
+
+<!--
+  This is an example system page. It is a complete page file. It does not have to include HTML header and footer
+  and can include any other files. The rendered result will be copied to /static.
+-->
+
+@@include('__html-header.html')
+
+<section class="system-page system-page__colors" id="main">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="system-page--header system-page--header__colors pb-2 mt-6 mb-2 border-bottom">
+          <h1 class="system-page--title system-page--title__colors"><a href="{{project.devel.root}}/">{{project.name}}</a></h1>
+        </div>
+        <h2 class="system-page--subtitle system-page--subtitle__colors pb-6 pt-2">Color system</h2>
+      </div><!-- /.col-sm -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+@@if (Object.keys(DATA.init.bootstrap.colors.customColors).length) {
+
+  <section class="system-section system-section__custom_colors">
+    <div class="container mb-7">
+      <div class="row">
+        <div class="col-sm">
+          <h3 class="system-section--title system-section--title__custom_colors">{{project.name}} brand and main colors</h3>
+          <div class="system-section--content system-section--content__custom_colors">
+            <div class="row pt-2 pb-2">
+
+              @@for (let [colorname, colorhexval] of Object.entries(DATA.init.bootstrap.colors.customColors)) {
+
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                  <div class="p-5 mb-4 mb-md-5 color-swatch text-truncate" style="background-color:var(--` + colorname + `);color:` +  DATA.getFgColor(colorhexval) + `">
+                    --` + colorname + ` ` + colorhexval + `
+                  </div>
+                </div>
+
+              }
+
+            </div>
+          </div>
+        </div><!-- /.col-sm -->
+      </div><!-- /.row -->
+    </div><!-- /.container/.mb-7 -->
+  </section>
+
+}
+
+  <section class="system-section system-section__theme_colors">
+    <div class="container mb-7">
+      <div class="row">
+        <div class="col-sm">
+          <h3 class="system-section--title system-section--title__theme_colors">{{project.name}} brand and UI colors</h3>
+          <div class="system-section--content system-section--content__theme_colors">
+            <div class="row pt-2 pb-2">
+
+              @@for (let [colorname, colorhexval] of Object.entries(DATA.project.bootstrap.colors.themeColors)) {
+
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                  <div class="p-5 mb-4 mb-md-5 color-swatch text-truncate" style="background-color:var(--` + colorname + `);color:` +  DATA.getFgColor(colorhexval) + `">
+                    --` + colorname + ` ` + colorhexval + `
+                  </div>
+                </div>
+
+              }
+
+            </div>
+          </div>
+        </div><!-- /.col-sm -->
+      </div><!-- /.row -->
+    </div><!-- /.container/.mb-7 -->
+  </section>
+
+  <section class="system-section system-section__default_colors">
+    <div class="container mb-7">
+      <div class="row">
+        <div class="col-sm">
+          <h3 class="system-section--title system-section--title__default_colors">Other theme colors</h3>
+          <div class="system-section--content system-section--content__default_colors">
+            <div class="row pt-2 pb-2">
+
+              @@for (let [colorname, colorhexval] of Object.entries(DATA.project.bootstrap.colors.colors)) {
+
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                  <div class="p-5 mb-4 mb-md-5 color-swatch text-truncate" style="background-color:var(--` + colorname + `);color:` +  DATA.getFgColor(colorhexval) + `">
+                    --` + colorname + ` ` + colorhexval + `
+                  </div>
+                </div>
+
+              }
+
+            </div>
+          </div>
+        </div><!-- /.col-sm -->
+      </div><!-- /.row -->
+    </div><!-- /.container/.mb-7 -->
+  </section>
+
+
+  <!-- INVERTED -->
+
+  <div class="inverted link-inverted bg-bg-inv pt-8 pb-1 mb-7">
+
+@@if (Object.keys(DATA.init.bootstrap.colors.customColors).length) {
+
+    <section class="system-section system-section__custom_colors">
+      <div class="container mb-7">
+        <div class="row">
+          <div class="col-sm">
+            <h3 class="system-section--title system-section--title__custom_colors">{{project.name}} brand and main colors</h3>
+            <div class="system-section--content system-section--content__custom_colors">
+              <div class="row pt-2 pb-2">
+
+                @@for (let [colorname, colorhexval] of Object.entries(DATA.init.bootstrap.colors.customColors)) {
+
+                  <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="p-5 mb-4 mb-md-5 color-swatch text-truncate" style="background-color:var(--` + colorname + `);color:` +  DATA.getFgColor(colorhexval) + `">
+                      --` + colorname + ` ` + colorhexval + `
+                    </div>
+                  </div>
+
+                }
+
+              </div>
+            </div>
+          </div><!-- /.col-sm -->
+        </div><!-- /.row -->
+      </div><!-- /.container/.mb-7 -->
+    </section>
+
+}
+
+    <section class="system-section system-section__theme_colors">
+      <div class="container mb-7">
+        <div class="row">
+          <div class="col-sm">
+            <h3 class="system-section--title system-section--title__theme_colors">{{project.name}} brand and UI colors</h3>
+            <div class="system-section--content system-section--content__theme_colors">
+              <div class="row pt-2 pb-2">
+
+                @@for (let [colorname, colorhexval] of Object.entries(DATA.project.bootstrap.colors.themeColors)) {
+
+                  <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="p-5 mb-4 mb-md-5 color-swatch text-truncate" style="background-color:var(--` + colorname + `);color:` +  DATA.getFgColor(colorhexval) + `">
+                      --` + colorname + ` ` + colorhexval + `
+                    </div>
+                  </div>
+
+                }
+
+              </div>
+            </div>
+          </div><!-- /.col-sm -->
+        </div><!-- /.row -->
+      </div><!-- /.container/.mb-7 -->
+    </section>
+
+    <section class="system-section system-section__default_colors">
+      <div class="container mb-7">
+        <div class="row">
+          <div class="col-sm">
+            <h3 class="system-section--title system-section--title__default_colors">Other theme colors</h3>
+            <div class="system-section--content system-section--content__default_colors">
+              <div class="row pt-2 pb-2">
+
+                @@for (let [colorname, colorhexval] of Object.entries(DATA.project.bootstrap.colors.colors)) {
+
+                  <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="p-5 mb-4 mb-md-5 color-swatch text-truncate" style="background-color:var(--` + colorname + `);color:` +  DATA.getFgColor(colorhexval) + `">
+                      --` + colorname + ` ` + colorhexval + `
+                    </div>
+                  </div>
+
+                }
+
+              </div>
+            </div>
+          </div><!-- /.col-sm -->
+        </div><!-- /.row -->
+      </div><!-- /.container/.mb-7 -->
+    </section>
+
+  </div><!-- /.inverted -->
+
+  <section class="system-section system-section__color_palette">
+    <div class="container mb-7">
+      <div class="row">
+        <div class="col-sm">
+          <h3 class="system-section--title system-section--title__color_palette">Color palette PNG</h3>
+          <div class="system-section--content system-section--content__color_palette">
+            <p><a href="{{project.devel.root}}/dist/assets/brand/color_scheme.png"><img src="{{project.devel.root}}/dist/assets/brand/color_scheme.png"
+              alt="Color palette PNG" class="img-fluid" width="600"></a></p>
+          </div>
+        </div><!-- /.col-sm -->
+      </div><!-- /.row -->
+    </div><!-- /.container/.mb-7 -->
+  </section>
+
+
+  <div class="container mt-8 mb-7 border-top">
+    <div class="row">
+      <div class="col-sm pt-2">
+        <ul class="font-x-small list-unstyled list-sm-inline-bullets">
+          <li><a href="{{project.devel.root}}/">{{project.name}}</a></li>
+          <li>{{project.devel.description}}</li>
+        </ul>
+      </div><!-- /.col-sm -->
+    </div><!-- /.row -->
+  </div><!-- /.container.mt-8.mb-7.border-top -->
+
+</section>
+
+@@include('__html-footer.html')

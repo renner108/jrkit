@@ -1,0 +1,104 @@
+//layout
+//--------
+
+
+/*
+56px/60px = 3.5000rem/1.0714    h1
+//48px/52px = 3.0000rem/1.0833    h2
+44px/48px = 2.7500rem/1.0909    h2
+32px/38px = 2.0000rem/1.1875    h3
+25px/32px = 1.5525rem/1.2800    h4
+24px/30px = 1.5000rem/1.2500    .font-x-big
+19px/26px = 1.1875rem/1.3684    h5, .font-bigger
+18px/24px = 1.1250rem/1.3333    .card--title                .lead font-size (18px/1.5)
+17px/25px = 1.0625rem/1.4706    .font-big                   bigger components text
+16px/24px = 1.0000rem/1.5000    h6, .font-base
+15px/23px = 0.9375rem/1.5333    .font-small, .card--text    secondary texts, cards text
+14px/22px = 0.8750rem/1.5714    .font-smaller, .btn-sm      navigations, buttons
+13px/22px = 0.8125rem/1.6923    .font-x-small               colophone
+12px/22px = 0.7500rem/1.8333    .font-xx-small
+*/
+
+//typography
+//--------
+//base font
+@mixin font-base {
+  letter-spacing: $base-letter-spacing;
+  word-spacing: $base-word-spacing;
+}
+
+//alt font
+@mixin font-alt {
+  font-family: $font-family-alt;
+  letter-spacing: $alt-letter-spacing;
+  word-spacing: $alt-word-spacing;
+}
+
+@mixin font-alt-fallback {
+  font-family: $font-family-alt-fallback;
+  letter-spacing: -0.01em;
+  word-spacing: -0.01em;
+}
+
+//small text
+@mixin font-small {
+  font-size: 0.9375rem;
+  line-height: 1.5333;
+}
+
+@mixin font-smaller {
+  font-size: 0.8750rem;
+  line-height: 1.5714;
+}
+
+@mixin font-x-small {
+  font-size: 0.8125rem;
+  line-height: 1.6923;
+}
+
+@mixin font-xx-small {
+  font-size: 0.7500rem;
+  line-height: 1.8333;
+}
+
+//big text
+@mixin font-big {
+  font-size: 1.0625rem;
+  line-height: 1.4706;
+}
+
+@mixin font-bigger {
+  font-size: 1.1875rem;
+  line-height: 1.3684;
+}
+
+@mixin font-x-big {
+  font-size: 1.5000rem;
+  line-height: 1.2500;
+}
+
+//divider
+@mixin divider {
+  padding: 0 0.33em;
+  opacity: 0.7;
+}
+
+
+//colors
+//--------
+
+
+//links
+//--------
+
+
+//transitions
+//--------
+@mixin trans {
+  transition-property: color, opacity, background-color, border-color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+}
+@mixin no-trans {
+  transition: none !important;
+}

@@ -1,0 +1,19 @@
+/* TEAM */
+
+Developer: janrenn (jan.renner@gmail.com)
+Site: https://janrenner.cz
+GitHub: https://github.com/janrenn
+Facebook: https://www.facebook.com/honzarenner
+Twitter: @janrenn
+Location: Prague, CZ
+
+/* SITE */
+
+Last update: {{date}}
+Standards: HTML5, CSS3, ES6
+Components: jQuery, Popper.js, Bootstrap 4, Owl Carousel...
+Software: SASS, Gulp, Babel, Rollup, Imagemin
+
+/* THANKS */
+
+Beatles, Cure, Doors, Velvet Underground, Joy Division & many more

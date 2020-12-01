@@ -1,0 +1,31 @@
+<!-- LOAD GLOBAL DATA -->
+@@if ((() => context.DATA = DATA)()) {}
+
+<!--
+  This is an example complete page file. It should include HTML header and footer and can include any other files.
+  The rendered result will be copied to /static.
+-->
+
+@@include('__html-header.html')
+<!-- We have to include .tpl file, not .html, as .html file already contains HTML header and footer -->
+@@include('_header.tpl')
+
+<section class="page">
+
+@@if (DATA.current && DATA.current.h1 && DATA.current.content) {
+
+  <div class="page--header">
+    <h1 class="page--title">{{current.h1}}</h1>
+  </div>
+
+  <div class="page--content">
+    {{current.content}}
+  </div>
+
+}
+
+</section>
+
+<!-- We have to include .tpl file, not .html, as .html file already contains HTML header and footer -->
+@@include('_footer.tpl')
+@@include('__html-footer.html')

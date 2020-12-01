@@ -1,0 +1,13 @@
+<!-- LOAD GLOBAL DATA -->
+@@if ((() => context.DATA = DATA)()) {}
+
+<meta name="twitter:card" content="summary_large_image">
+@@if (DATA.project.twitterName !== false) {
+  <meta name="twitter:site" content="{{project.twitterName}}">
+  <meta name="twitter:creator" content="{{project.twitterName}}">
+}
+@@if (DATA.current) {
+  <meta name="twitter:title" content="{{current.title}}">
+  <meta name="twitter:description" content="{{current.description}}">
+  <meta name="twitter:image" content="{{project.devel.root}}{{current.image.facebook}}">
+}
