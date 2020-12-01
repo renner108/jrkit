@@ -403,13 +403,13 @@ As such, the classes are named using the format:
 | ``.font-italic``     | – |
 | ``.text-monospace``     | – |  to ``$font-family-monospace`` value
 | ``.text-reset``     | – |  ``color: inherit !important``
-| ``.text-decoration-none``     | – |
+| ``.text-decoration-none``     | – |  ``text-decoration: none !important``
 
 #### Links
 
 | Class | Purpose
 | - | -
-| ``.stretched-link``     | link stretched via its ``:after`` over parent
+| ``.stretched-link``     | link stretched via its ``::after`` over parent
 
 #### Text selection
 

@@ -308,7 +308,7 @@ html/
 @@include('_studio_ypsilon.tpl')
 
 <!-- KDE NÁS NAJDETE -->
-@@include('_kde_nas_najdete.tpl')
+@@include('_banner_kde_nas_najdete.tpl')
 
 <!-- We have to include .tpl file, not .html, as .html file already contains HTML header and footer -->
 @@include('_footer.tpl')
@@ -498,7 +498,11 @@ See also [readme-bootstrap.md#layout-utilities](readme-bootstrap.md#layout-utili
 | ``.font-big``  | –  | dtto
 | ``.font-bigger``  | –  | dtto
 | ``.font-x-big``  | –  | dtto
+| ``.font-xx-big``  | –  | TODO
 | ``h1`` – ``h6``, ``.h1`` – ``.h6``  | –  | dtto
+| ``.line-height-base``  | –  | sets ``line-height: $line-height-base !important;``
+| ``.line-height-1``  | –  | sets ``line-height: 1 !important;``
+| ``.line-height-0``  | –  | sets ``line-height: 0 !important;``
 | ``.thin-space``  | –  | sets small ``font-size`` for thin space character
 | ``.hair-space``  | –  | sets smaller ``font-size`` for thinner space character
 | ``.thin-spacing``  | –  | sets ``word-spacing`` for thin spaces
@@ -589,8 +593,8 @@ See https://getbootstrap.com/docs/4.5/content/typography/#inline
 
 | Class | Purpose
 | - | - 
-| ``.link-decoration-swap``  | sets ``text-decoration: $link-hover-decoration`` on nested ``a``s <br> and ``text-decoration: $link-decoration`` on nested ``a:hover`` and ``a:focus``
-| ``.link-decoration-base``  | resets ``text-decoration: $link-decoration`` on nested ``a``s <br> and ``text-decoration: $link-hover-decoration`` on nested ``a:hover`` and ``a:focus``
+| ``.link-decoration-swap``  | sets ``text-decoration: $link-hover-decoration;`` on nested ``a``s <br> and ``text-decoration: $link-decoration;`` on nested ``a:hover`` and ``a:focus``
+| ``.link-decoration-base``  | resets ``text-decoration: $link-decoration;`` on nested ``a``s <br> and ``text-decoration: $link-hover-decoration;`` on nested ``a:hover`` and ``a:focus``
 | ``h1 a`` – ``h6 a``, ``.h1 a`` – ``.h6 a``  | behavior is set in ``src/scss/base/_links.scss``
 | ``.link-decoration-none``  | sets ``text-decoration: none !important;`` on nested ``a``s
 | ``.text-decoration-none``  | sets ``text-decoration: none !important;``
